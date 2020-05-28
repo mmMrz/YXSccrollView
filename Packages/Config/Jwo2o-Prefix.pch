@@ -1,0 +1,17 @@
+//
+//  JinwowoNew-Prefix.pch
+//  Jinwowo
+//
+//  Created by wubangxin on 
+//  Copyright © 2017年 wubangxin. All rights reserved.
+//
+
+#ifndef __IPHONE_7_0
+
+#endif
+
+
+#ifdef __OBJC__
+#import "AppMacro.h"
+
+#endif
