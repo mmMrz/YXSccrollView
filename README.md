@@ -8,6 +8,7 @@ Apple官方不建议将ScrollView嵌套使用，可是产品和设计师们就�
 网上有众多实现此功能的方案，但是鱼龙混杂，而且大部分也不完善，完善的代码又特别复杂，整合工作量较大，这两天正好有时间和机会，好好研究和思考了一下最简单的解决方案。
 
 先上个效果图
+
 ![2020-05-28 20_48_17.gif](https://upload-images.jianshu.io/upload_images/11673677-73553487ee09f8f8.gif?imageMogr2/auto-orient/strip)
 
 
@@ -16,7 +17,9 @@ Apple官方不建议将ScrollView嵌套使用，可是产品和设计师们就�
 大概思路就是在内层的UIScrollView(UITableView也算是UIScrollView)的ScrollViewDidScroll代理方法里面做逻辑判断，看是否允许自己滚动。
 
 首先我的层级结构如下图（蓝色的内ScrollView，会横向平铺多个）
+
 ![78DCD371-B734-4788-B46A-3030765CF544.png](https://upload-images.jianshu.io/upload_images/11673677-ae434d687c9942f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400)
+
 通常这种情况，在XIB中画好了外部框之后，内部的这个UITableVIew(UIScrollView)是由根据服务器返回的多少个分类，由代码编写后横向平铺的，这也就方便了我们使用自定义类。所以，首先我们还是逃不掉重写一个UITableView，像这样
 ```
 QCTableView.h
